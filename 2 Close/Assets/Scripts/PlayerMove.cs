@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
+
 public class PlayerMove : MonoBehaviour
 {
-    Rigidbody2D body;
+    Rigidbody2D rb;
 
     float x;
     float y;
@@ -14,7 +16,7 @@ public class PlayerMove : MonoBehaviour
 
     void Start()
     {
-        body = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -32,6 +34,6 @@ public class PlayerMove : MonoBehaviour
             y *= diagonalSpeed;
         }
 
-        body.velocity = new Vector2(x * Speed, y * Speed);
+        rb.velocity = new Vector2(x * Speed, y * Speed);
     }
 }
