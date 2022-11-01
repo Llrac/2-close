@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bookshelfScript : MonoBehaviour
+public class Bookshelf : MonoBehaviour
 {
     SpriteRenderer spriteRenderer;
     // Start is called before the first frame update

@@ -2,25 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ToCloseBehind : MonoBehaviour
+public class TooCloseAlert : MonoBehaviour
 {
     public float timer = 3;
     public float timerStartValue = 3;
-    bool toClose;
+
+    bool tooClose;
+    
     GameObject playerCollisionObj;
-    UIManagerScript uIManager;
+    UIManagerScript UIManager;
+
     // Start is called before the first frame update
     void Start()
     {
-        uIManager = FindObjectOfType<UIManagerScript>();
+        UIManager = FindObjectOfType<UIManagerScript>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        uIManager.timeInCircle = timer;
+        UIManager.timeInCircle = timer;
 
-        if (toClose)
+        if (tooClose)
         {
             timer -= Time.deltaTime;
             
@@ -32,16 +35,16 @@ public class ToCloseBehind : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.CompareTag("Player"))
         {
             playerCollisionObj = collision.gameObject;
-            toClose = true;
+            tooClose = true;
            
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         timer = timerStartValue;
-        toClose = false;
+        tooClose = false;
     }
 }

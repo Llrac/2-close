@@ -10,7 +10,7 @@ public class PlayerMove : MonoBehaviour
     Animator anim;
     Rigidbody2D rb;
 
-    bool isRunning = false;
+    bool isWalking = false;
 
     float x, y;
     float diagonalSpeed = 0.7f;
@@ -32,44 +32,44 @@ public class PlayerMove : MonoBehaviour
 
         if (y != 0 && x == 0)
         {
-            if (!isRunning)
+            if (!isWalking)
             {
-                isRunning = true;
-                anim.SetBool("isRunning", true);
-                anim.SetTrigger("goRun");
-                anim.ResetTrigger("goIdle");
+                isWalking = true;
+                anim.SetBool("isWalking", true);
+                anim.SetTrigger("walk");
+                anim.ResetTrigger("idle");
             }
         }
         else if (x < 0)
         {
             if (transform.localScale.x > 0)
                 transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
-            if (!isRunning)
+            if (!isWalking)
             {
-                isRunning = true;
-                anim.SetBool("isRunning", true);
-                anim.SetTrigger("goRun");
-                anim.ResetTrigger("goIdle");
+                isWalking = true;
+                anim.SetBool("isWalking", true);
+                anim.SetTrigger("walk");
+                anim.ResetTrigger("idle");
             }
         }
         else if (x > 0)
         {
             if (transform.localScale.x < 0)
                 transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
-            if (!isRunning)
+            if (!isWalking)
             {
-                isRunning = true;
-                anim.SetBool("isRunning", true);
-                anim.SetTrigger("goRun");
-                anim.ResetTrigger("goIdle");
+                isWalking = true;
+                anim.SetBool("isWalking", true);
+                anim.SetTrigger("walk");
+                anim.ResetTrigger("idle");
             }
         }
-        else if (rb.velocity.x == 0 && rb.velocity.y == 0 && isRunning)
+        else if (rb.velocity.x == 0 && rb.velocity.y == 0 && isWalking)
         {
-            isRunning = false;
-            anim.SetBool("isRunning", false);
-            anim.SetTrigger("goIdle");
-            anim.ResetTrigger("goRun");
+            isWalking = false;
+            anim.SetBool("isWalking", false);
+            anim.SetTrigger("idle");
+            anim.ResetTrigger("walk");
         }
     }
 
