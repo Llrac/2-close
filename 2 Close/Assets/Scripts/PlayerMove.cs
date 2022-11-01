@@ -30,29 +30,60 @@ public class PlayerMove : MonoBehaviour
         x = Input.GetAxisRaw("Horizontal");
         y = Input.GetAxisRaw("Vertical");
 
-        if (rb.velocity.x < 0 && !isRunning)
+        if (y != 0)
         {
-            isRunning = true;
-            anim.SetBool("isRunning", true);
-            anim.SetTrigger("goRun");
+            if (!isRunning)
+            {
+                isRunning = true;
+                anim.SetBool("isRunning", true);
+                anim.SetTrigger("goRun");
+                anim.ResetTrigger("goIdle");
+            }
         }
-        else if (rb.velocity.x > 0 && !isRunning)
-        {
-            isRunning = true;
-            anim.SetBool("isRunning", true);
-            anim.SetTrigger("goRun");
-        }
-        else
+        else if (y == 0 && isRunning)
         {
             isRunning = false;
             anim.SetBool("isRunning", false);
             anim.SetTrigger("goIdle");
+            anim.ResetTrigger("goRun");
+        }
+
+        if (x < 0)
+        {
+            if (transform.localScale.x > 0)
+                transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+            if (!isRunning)
+            {
+                isRunning = true;
+                anim.SetBool("isRunning", true);
+                anim.SetTrigger("goRun");
+                anim.ResetTrigger("goIdle");
+            }
+        }
+        else if (x > 0)
+        {
+            if (transform.localScale.x < 0)
+                transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+            if (!isRunning)
+            {
+                isRunning = true;
+                anim.SetBool("isRunning", true);
+                anim.SetTrigger("goRun");
+                anim.ResetTrigger("goIdle");
+            }
+        }
+        else if (rb.velocity.x == 0 && isRunning)
+        {
+            isRunning = false;
+            anim.SetBool("isRunning", false);
+            anim.SetTrigger("goIdle");
+            anim.ResetTrigger("goRun");
         }
     }
 
     void FixedUpdate()
     {
-        if (x != 0 && y != 0) 
+        if (x != 0 && y != 0)
         {           
             x *= diagonalSpeed;
             y *= diagonalSpeed;
