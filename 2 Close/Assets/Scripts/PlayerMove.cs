@@ -30,7 +30,7 @@ public class PlayerMove : MonoBehaviour
         x = Input.GetAxisRaw("Horizontal");
         y = Input.GetAxisRaw("Vertical");
 
-        if (y != 0)
+        if (y != 0 && x == 0)
         {
             if (!isRunning)
             {
@@ -40,15 +40,7 @@ public class PlayerMove : MonoBehaviour
                 anim.ResetTrigger("goIdle");
             }
         }
-        else if (y == 0 && isRunning)
-        {
-            isRunning = false;
-            anim.SetBool("isRunning", false);
-            anim.SetTrigger("goIdle");
-            anim.ResetTrigger("goRun");
-        }
-
-        if (x < 0)
+        else if (x < 0)
         {
             if (transform.localScale.x > 0)
                 transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
@@ -72,7 +64,7 @@ public class PlayerMove : MonoBehaviour
                 anim.ResetTrigger("goIdle");
             }
         }
-        else if (rb.velocity.x == 0 && isRunning)
+        else if (rb.velocity.x == 0 && rb.velocity.y == 0 && isRunning)
         {
             isRunning = false;
             anim.SetBool("isRunning", false);
