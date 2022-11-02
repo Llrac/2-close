@@ -5,8 +5,7 @@ using UnityEngine;
 public class Camerafollow : MonoBehaviour
 {
     public Transform player;
-    float minPosition = -20;
-    float maxPosition = 1;
+    readonly float maxPosition = 1;
 
     void Update()
     {
@@ -18,13 +17,5 @@ public class Camerafollow : MonoBehaviour
         {
             transform.position = new Vector3(player.position.x, transform.position.y, -10);
         }
-
-
-
-
-
-
-
-
     }
 }

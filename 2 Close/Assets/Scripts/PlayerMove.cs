@@ -13,7 +13,7 @@ public class PlayerMove : MonoBehaviour
     bool isWalking = false;
 
     float x, y;
-    float diagonalSpeed = 0.7f;
+    readonly float diagonalSpeed = 0.7f;
 
     public float Speed = 10.0f;
 

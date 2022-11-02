@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TooCloseAlert : MonoBehaviour
+public class TooCloseAlerter : MonoBehaviour
 {
     public float timer = 3;
     public float timerStartValue = 3;
