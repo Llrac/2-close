@@ -6,7 +6,7 @@ using TMPro;
 public class UIManagerScript : MonoBehaviour
     
 {
-    public TMP_Text detectionCircle;
+    public TMP_Text detectionCircleTimer;
     public float timeInCircle;
     // Start is called before the first frame update
     void Start()
@@ -17,6 +17,6 @@ public class UIManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        detectionCircle.text = "" + timeInCircle;
+        detectionCircleTimer.text = "" + timeInCircle;
     }
 }
