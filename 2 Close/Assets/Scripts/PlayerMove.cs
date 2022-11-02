@@ -35,7 +35,6 @@ public class PlayerMove : MonoBehaviour
             if (!isWalking)
             {
                 isWalking = true;
-                anim.SetBool("isWalking", true);
                 anim.SetTrigger("walk");
                 anim.ResetTrigger("idle");
             }
@@ -47,7 +46,6 @@ public class PlayerMove : MonoBehaviour
             if (!isWalking)
             {
                 isWalking = true;
-                anim.SetBool("isWalking", true);
                 anim.SetTrigger("walk");
                 anim.ResetTrigger("idle");
             }
@@ -59,7 +57,6 @@ public class PlayerMove : MonoBehaviour
             if (!isWalking)
             {
                 isWalking = true;
-                anim.SetBool("isWalking", true);
                 anim.SetTrigger("walk");
                 anim.ResetTrigger("idle");
             }
@@ -67,7 +64,6 @@ public class PlayerMove : MonoBehaviour
         else if (rb.velocity.x == 0 && rb.velocity.y == 0 && isWalking)
         {
             isWalking = false;
-            anim.SetBool("isWalking", false);
             anim.SetTrigger("idle");
             anim.ResetTrigger("walk");
         }
