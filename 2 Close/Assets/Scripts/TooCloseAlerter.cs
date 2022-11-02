@@ -5,7 +5,7 @@ using UnityEngine;
 public class TooCloseAlerter : MonoBehaviour
 {
     public float timer = 3;
-    public float timerStartValue = 3;
+    public float timerStartValue;
 
     bool tooClose;
     
@@ -16,22 +16,25 @@ public class TooCloseAlerter : MonoBehaviour
     void Start()
     {
         UIManager = FindObjectOfType<UIManagerScript>();
+        timerStartValue = 3;
     }
 
     // Update is called once per frame
     void Update()
     {
-        UIManager.timeInCircle = timer;
+        //UIManager.timeInCircle = timer;
 
         if (tooClose)
         {
+            UIManager.timeInCircle = timer;
             timer -= Time.deltaTime;
             
             if (timer < 0)
             {
-                Destroy(playerCollisionObj);
+                //Destroy(playerCollisionObj);
             }
         }
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -42,9 +45,14 @@ public class TooCloseAlerter : MonoBehaviour
            
         }
     }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        tooClose = true;
+    }
     private void OnTriggerExit2D(Collider2D collision)
     {
         timer = timerStartValue;
         tooClose = false;
+        UIManager.timeInCircle = timer;
     }
 }
