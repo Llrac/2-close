@@ -8,19 +8,24 @@ public class InLightScript : MonoBehaviour
     CameraOverlayScript cameraOverlayScript;
     public bool IsInLight = false;
 
-
+    private void Start()
+    {
+        cameraOverlayScript = FindObjectOfType<CameraOverlayScript>();
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("SafeLight"))
         {
-            IsInLight = true;
+            Debug.Log("is in safelight");
+            cameraOverlayScript.isInLightBool = true;
+            
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("SafeLight"))
         {
-            IsInLight = true;
+            cameraOverlayScript.isInLightBool = true;
         }
     }
 
@@ -28,7 +33,7 @@ public class InLightScript : MonoBehaviour
     {
         if (collision.CompareTag("SafeLight"))
         {
-            IsInLight = false;
+            cameraOverlayScript.isInLightBool = false;
         }
     }
 }

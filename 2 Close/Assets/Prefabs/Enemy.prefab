@@ -95,7 +95,6 @@ GameObject:
   - component: {fileID: 1416527095}
   - component: {fileID: 1416527094}
   - component: {fileID: 1416527093}
-  - component: {fileID: 1416527096}
   m_Layer: 0
   m_Name: Lamp ljus
   m_TagString: DetectionCircle
@@ -187,20 +186,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1.8}
   m_Direction: 1
---- !u!114 &1416527096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1416527092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f6bcd0164cd22f4495d275139cd59b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer: 3
-  timerStartValue: 3
 --- !u!1 &2097508671
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,8 +284,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f6bcd0164cd22f4495d275139cd59b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 3
-  timerStartValue: 3
 --- !u!70 &2097508675
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

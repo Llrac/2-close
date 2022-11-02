@@ -4,21 +4,28 @@ using UnityEngine;
 
 public class CameraOverlayScript : MonoBehaviour
 {
-    public InLightScript playerInLightScript;
     float timeInDarkness = 0;
     public SpriteRenderer[] darknessGradiant;
-
+    public SpriteRenderer warningLight;
+    public SpriteRenderer warningOutLine;
+    public bool isInLightBool;
+    public bool isInDangerBool;
     // Start is called before the first frame update
+
+    float timeInBetween = 0.3f;
+    float warningLightTimer = 0f;
     void Start()
     {
-       
+        isInDangerBool = false;
+        isInLightBool = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Light
         //If player is not in the light, start timer and and on CameraOverLay Darkness
-        if (playerInLightScript.IsInLight == false)
+        if (isInLightBool == false)
         {
             timeInDarkness += Time.deltaTime;
             Debug.Log("is in darkness");
@@ -51,7 +58,7 @@ public class CameraOverlayScript : MonoBehaviour
                 darknessGradiant[6].enabled = true;
             }
         }
-        if (playerInLightScript.IsInLight == true)
+        if (isInLightBool == true)
         {
             for (int i = 0; i < darknessGradiant.Length; i++)
             {
@@ -61,8 +68,37 @@ public class CameraOverlayScript : MonoBehaviour
             Debug.Log("is in light");
         }
 
-        //Darkness activation stages
+        //DangerZones
+        //If in danger zones
+        if (isInDangerBool == true)
+        {
+            //warningLight.enabled = true;
+            warningOutLine.enabled = true;
 
+            
+            warningLightTimer += Time.deltaTime;
+
+
+            if (warningLightTimer > timeInBetween)
+            {
+                if (warningLight.enabled == false)
+                {
+                    warningLight.enabled = true;
+                }
+                else if (warningLight.enabled == true)
+                {
+                    warningLight.enabled = false;
+                }               
+                warningLightTimer = 0;              
+            }
+
+        }
+        //If NOT in danger zones
+        if (isInDangerBool == false)
+        {
+            warningLight.enabled = false;
+            warningOutLine.enabled = false;
+        }
        
     }
 }
