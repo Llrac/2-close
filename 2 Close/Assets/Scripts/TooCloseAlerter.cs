@@ -6,17 +6,17 @@ public class TooCloseAlerter : MonoBehaviour
 {
     public float timer = 3;
     public float timerStartValue;
-
-    bool tooClose;
-    
+    bool tooClose; 
     GameObject playerCollisionObj;
     UIManagerScript UIManager;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         UIManager = FindObjectOfType<UIManagerScript>();
         timerStartValue = 3;
+
     }
 
     // Update is called once per frame
@@ -26,12 +26,13 @@ public class TooCloseAlerter : MonoBehaviour
 
         if (tooClose)
         {
-            UIManager.timeInCircle = timer;
+            UIManager.timeInDetectionZoneMaxValue = timer;
             timer -= Time.deltaTime;
             
-            if (timer < 0)
+            if (timer < 2.5f)
             {
-                //Destroy(playerCollisionObj);
+                UIManager.redOverScreen = true;
+                Debug.Log("RedOverScreen set to true");
             }
         }
 
@@ -51,8 +52,9 @@ public class TooCloseAlerter : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
+        UIManager.redOverScreen = false;
         timer = timerStartValue;
         tooClose = false;
-        UIManager.timeInCircle = timer;
+        UIManager.timeInDetectionZoneMaxValue = timer;
     }
 }

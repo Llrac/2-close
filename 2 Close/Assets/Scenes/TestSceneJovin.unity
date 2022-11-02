@@ -640,7 +640,11 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 440746397}
+<<<<<<< Updated upstream
   m_Enabled: 0
+=======
+  m_Enabled: 1
+>>>>>>> Stashed changes
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -799,9 +803,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b716a979c6c7f0740b6332b9e6453a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   deathGradient: []
   detectionCircleTimer: {fileID: 944603744}
   timeInCircle: 3
+=======
+  redOverWholeScreenSprite: {fileID: 1404891332}
+  deathGradiant:
+  - {fileID: 990875024}
+  - {fileID: 574235072}
+  - {fileID: 2136581145}
+  - {fileID: 741665907}
+  - {fileID: 741665907}
+  - {fileID: 865915609}
+  - {fileID: 353961208}
+  detectionCircleTimer: {fileID: 944603744}
+  timeInDetectionZoneMaxValue: 3
+  redOverScreen: 0
+>>>>>>> Stashed changes
 --- !u!4 &604093838
 Transform:
   m_ObjectHideFlags: 0
@@ -1115,7 +1134,11 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 803470853}
+<<<<<<< Updated upstream
   m_Enabled: 0
+=======
+  m_Enabled: 1
+>>>>>>> Stashed changes
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -1275,6 +1298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInLightScript: {fileID: 1687765270}
+<<<<<<< Updated upstream
   timeInDarkness: 0
   darknessGradiant:
   - {fileID: 440746399}
@@ -1283,6 +1307,15 @@ MonoBehaviour:
   - {fileID: 1838899979}
   - {fileID: 2065289567}
   - {fileID: 1456486041}
+=======
+  darknessGradiant:
+  - {fileID: 990875024}
+  - {fileID: 574235072}
+  - {fileID: 2136581145}
+  - {fileID: 741665907}
+  - {fileID: 865915609}
+  - {fileID: 353961208}
+>>>>>>> Stashed changes
 --- !u!1 &861078774
 GameObject:
   m_ObjectHideFlags: 0
@@ -2686,7 +2719,11 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1456486039}
+<<<<<<< Updated upstream
   m_Enabled: 0
+=======
+  m_Enabled: 1
+>>>>>>> Stashed changes
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -2795,8 +2832,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9870ea994cd1a1a459f8cedaa180cf95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   darknessSprite: {fileID: 0}
   cameraOverlayScript: {fileID: 0}
+=======
+>>>>>>> Stashed changes
   IsInLight: 0
 --- !u!1 &1748597117
 GameObject:
@@ -3108,7 +3148,11 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1838899977}
+<<<<<<< Updated upstream
   m_Enabled: 0
+=======
+  m_Enabled: 1
+>>>>>>> Stashed changes
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -3449,7 +3493,11 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2026900230}
+<<<<<<< Updated upstream
   m_Enabled: 0
+=======
+  m_Enabled: 1
+>>>>>>> Stashed changes
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -3714,7 +3762,11 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2065289565}
+<<<<<<< Updated upstream
   m_Enabled: 0
+=======
+  m_Enabled: 1
+>>>>>>> Stashed changes
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
