@@ -13,6 +13,7 @@ public class EnemyMove : MonoBehaviour
 
     Waypoints waypoints;
     Transform currentWaypoint;
+    Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,7 @@ public class EnemyMove : MonoBehaviour
 
         currentWaypoint = waypoints.GetNextWaypoint(currentWaypoint);
 
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -36,6 +38,16 @@ public class EnemyMove : MonoBehaviour
         if (Vector3.Distance(transform.position, currentWaypoint.position) < distanceThreshold)
         {
             currentWaypoint = waypoints.GetNextWaypoint(currentWaypoint);
+            if (currentWaypoint.position.x < transform.position.x)
+            {
+                if (transform.localScale.x > 0)
+                    transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+            }
+            else if (currentWaypoint.position.x > transform.position.x)
+            {
+                if (transform.localScale.x < 0)
+                    transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+            }
         }
     }
 }

@@ -4,17 +4,28 @@ using UnityEngine;
 
 public class DoorLock : MonoBehaviour
 {
-    GameController gameControllerScript;
+    public GameObject playerToPoint;
+    
+    Animator anim;
+    GameManager gameControllerScript;
+    GameObject player;
+
     private void Awake()
     {
-        gameControllerScript = FindObjectOfType<GameController>();
+        anim = GetComponent<Animator>();
+        gameControllerScript = FindObjectOfType<GameManager>();
+        player = GameObject.Find("Player");
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (gameControllerScript.hasGoldenKey == true && collision.CompareTag("Player"))
+        if (gameControllerScript.hasGoldenKey == true && other.gameObject.CompareTag("Player"))
         {
-            Destroy(transform.parent.gameObject);
-            Destroy(gameObject);
+            Debug.Log("Level 1 completed");
+            anim.Play("doorOpens");
+            player.transform.position = new Vector2(Mathf.Lerp(player.transform.position.x, playerToPoint.transform.position.x, 3), Mathf.Lerp(player.transform.position.y, playerToPoint.transform.position.y, 3));
+            PlayerMove playerMoveScript = player.GetComponent<PlayerMove>();
+            playerMoveScript.hasControl = false;
         }
     }
 }

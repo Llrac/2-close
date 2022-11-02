@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class KeyPickup : MonoBehaviour
 {
-    GameController gameControllerScript;
+    GameManager gameControllerScript;
 
     private void Awake()
     {
-        gameControllerScript = FindObjectOfType<GameController>();
+        gameControllerScript = FindObjectOfType<GameManager>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

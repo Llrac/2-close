@@ -10,6 +10,7 @@ public class PlayerMove : MonoBehaviour
     Animator anim;
     Rigidbody2D rb;
 
+    public bool hasControl = true;
     bool isWalking = false;
 
     float x, y;
@@ -27,6 +28,9 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
+        if (!hasControl)
+            return;
+
         x = Input.GetAxisRaw("Horizontal");
         y = Input.GetAxisRaw("Vertical");
 
@@ -71,6 +75,9 @@ public class PlayerMove : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!hasControl)
+            return;
+
         if (x != 0 && y != 0)
         {           
             x *= diagonalSpeed;
