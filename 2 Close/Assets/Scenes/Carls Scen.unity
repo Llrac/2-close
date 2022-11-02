@@ -190,6 +190,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 710178729, guid: 444cfe477efbaab43ae3cef486c49218, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a07e1dfb9ff01e64cbb6d4982b135319, type: 3}
     - target: {fileID: 1114515481077688200, guid: 444cfe477efbaab43ae3cef486c49218, type: 3}
       propertyPath: m_Name
       value: Player
@@ -200,7 +204,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1114515481077688201, guid: 444cfe477efbaab43ae3cef486c49218, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.679
       objectReference: {fileID: 0}
     - target: {fileID: 1114515481077688201, guid: 444cfe477efbaab43ae3cef486c49218, type: 3}
       propertyPath: m_LocalPosition.y
@@ -253,24 +257,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground
       objectReference: {fileID: 0}
-    - target: {fileID: 4090940375610561157, guid: d452ec8bae6242d47bc05eac01c1e05b, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 7ffc16c6199a73548a1102dcc30fbce4, type: 3}
-    - target: {fileID: 4090940375610561157, guid: d452ec8bae6242d47bc05eac01c1e05b, type: 3}
-      propertyPath: m_SortingOrder
-      value: -2
-      objectReference: {fileID: 0}
     - target: {fileID: 4090940375610561162, guid: d452ec8bae6242d47bc05eac01c1e05b, type: 3}
       propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090940375610561162, guid: d452ec8bae6242d47bc05eac01c1e05b, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090940375610561162, guid: d452ec8bae6242d47bc05eac01c1e05b, type: 3}
-      propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4090940375610561162, guid: d452ec8bae6242d47bc05eac01c1e05b, type: 3}
@@ -327,10 +315,6 @@ PrefabInstance:
     - target: {fileID: 4241673763775374193, guid: 87672c6ba0319814587fe650d3996938, type: 3}
       propertyPath: m_Name
       value: Main Camera
-      objectReference: {fileID: 0}
-    - target: {fileID: 4241673763775374195, guid: 87672c6ba0319814587fe650d3996938, type: 3}
-      propertyPath: orthographic size
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4241673763775374204, guid: 87672c6ba0319814587fe650d3996938, type: 3}
       propertyPath: m_RootOrder
