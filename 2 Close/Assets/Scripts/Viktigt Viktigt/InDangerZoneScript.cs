@@ -22,7 +22,7 @@ public class InDangerZoneScript : MonoBehaviour
         if (cameraOverlayScript.isInDangerBool == true)
         {
             inDangerTimer += Time.deltaTime;
-            if (inDangerTimer > 1.25)
+            if (inDangerTimer > 0.65f)
             {
                 this.transform.position = RespawnPoint.transform.position;
                 keyPickupScript.theKey.SetActive(true);
