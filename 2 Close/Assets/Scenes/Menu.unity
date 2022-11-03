@@ -960,8 +960,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Credits
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 64b8b99b7baa0c64087dc798eae6ae70, type: 2}
-  m_sharedMaterial: {fileID: 6615115789500318908, guid: 64b8b99b7baa0c64087dc798eae6ae70, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 26857d21fe9a34d47999c8c4b28c1d8f, type: 2}
+  m_sharedMaterial: {fileID: 7713701220269385817, guid: 26857d21fe9a34d47999c8c4b28c1d8f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1634,8 +1634,8 @@ MonoBehaviour:
   m_text: " Artists:\n\n\tHilda Sund\n\tAlexandra S\xF6derstr\xF6m\n\n Programmers:\n\n\tJovin
     Fast\n\tCarl Lycke\n\tCarina Karlsson"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 64b8b99b7baa0c64087dc798eae6ae70, type: 2}
-  m_sharedMaterial: {fileID: 6615115789500318908, guid: 64b8b99b7baa0c64087dc798eae6ae70, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 26857d21fe9a34d47999c8c4b28c1d8f, type: 2}
+  m_sharedMaterial: {fileID: 7713701220269385817, guid: 26857d21fe9a34d47999c8c4b28c1d8f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
