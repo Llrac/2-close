@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class KeyPickup : MonoBehaviour
 {
+    
+    
     GameManager gameControllerScript;
     public GameObject theKey;
     private void Awake()
     {
+        
         theKey = this.gameObject;
         gameControllerScript = FindObjectOfType<GameManager>();
     }
@@ -15,6 +18,7 @@ public class KeyPickup : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            
             gameControllerScript.hasGoldenKey = true;
             this.gameObject.SetActive(false);
         }

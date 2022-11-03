@@ -5,7 +5,7 @@ using UnityEngine;
 public class DarknessScript : MonoBehaviour
 {
     
-    float opacityLevelTimer = 0;
+    public float opacityLevelTimer = 0;
     float opacityLevel;
      SpriteRenderer darknessSpriteRenderer;
     CameraOverlayScript cameraOverlayScript;
@@ -20,8 +20,11 @@ public class DarknessScript : MonoBehaviour
         opacityLevel = cameraOverlayScript.timeInDarkness;
         if (cameraOverlayScript.isInLightBool == false)
         {
-            opacityLevelTimer += 0.15f * Time.deltaTime;         
-            darknessSpriteRenderer.color =  new Color(0, 0, 0, opacityLevelTimer);
+            
+                opacityLevelTimer += 0.15f * Time.deltaTime;
+                darknessSpriteRenderer.color = new Color(0, 0, 0, opacityLevelTimer);
+            
+
         }
         else if (cameraOverlayScript.isInLightBool == true)
         {

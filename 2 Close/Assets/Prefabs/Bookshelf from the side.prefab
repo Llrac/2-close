@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3894994399052403895}
   - component: {fileID: 8620761935503027975}
-  - component: {fileID: 7128757807052311986}
+  - component: {fileID: 6562232857174509859}
+  - component: {fileID: 6243568690607708412}
   m_Layer: 0
   m_Name: Bookshelf from the side
   m_TagString: Untagged
@@ -31,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 35
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8620761935503027975
 SpriteRenderer:
@@ -85,8 +86,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &7128757807052311986
-BoxCollider2D:
+--- !u!70 &6562232857174509859
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -98,16 +99,22 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.058627605, y: 0.9900681}
-  m_SpriteTilingProperty:
-    border: {x: 0.004, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5778128, y: 0.17687072}
-    oldSize: {x: 0.986, y: 3.064}
-    newSize: {x: 0.986, y: 3.064}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.8050451, y: 3.064}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0.02, y: 0.22}
+  m_Size: {x: 0.78, y: 1.78}
+  m_Direction: 0
+--- !u!70 &6243568690607708412
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4659068203650804710}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.07672338, y: 0.9900681}
+  m_Size: {x: 0.98599994, y: 1.21}
+  m_Direction: 0
