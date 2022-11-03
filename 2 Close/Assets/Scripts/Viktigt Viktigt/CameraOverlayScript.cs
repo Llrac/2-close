@@ -12,8 +12,9 @@ public class CameraOverlayScript : MonoBehaviour
     public bool isInDangerBool;
     // Start is called before the first frame update
 
-    float timeInBetween = 0.3f;
-    float warningLightTimer = 0f;
+    public float warningLightTimer = 0f;
+    public float warningRate = 0.3f;
+
     void Start()
     {
         isInDangerBool = false;
@@ -25,10 +26,18 @@ public class CameraOverlayScript : MonoBehaviour
     {
         //Light
         //If player is not in the light, start timer and and on CameraOverLay Darkness
+        LightDetection();
+
+        //DangerZones
+        //If in danger zones
+        DangerDetection();
+
+    }
+    private void LightDetection()
+    {
         if (isInLightBool == false)
         {
             timeInDarkness += Time.deltaTime;
-            Debug.Log("is in darkness");
             if (timeInDarkness > 3f)
             {
                 darknessGradiant[0].enabled = true;
@@ -67,19 +76,18 @@ public class CameraOverlayScript : MonoBehaviour
             timeInDarkness = 0f;
             Debug.Log("is in light");
         }
+    }
 
-        //DangerZones
-        //If in danger zones
+    private void DangerDetection()
+    {
         if (isInDangerBool == true)
         {
             //warningLight.enabled = true;
             warningOutLine.enabled = true;
 
-            
             warningLightTimer += Time.deltaTime;
 
-
-            if (warningLightTimer > timeInBetween)
+            if (warningLightTimer > warningRate)
             {
                 if (warningLight.enabled == false)
                 {
@@ -88,8 +96,8 @@ public class CameraOverlayScript : MonoBehaviour
                 else if (warningLight.enabled == true)
                 {
                     warningLight.enabled = false;
-                }               
-                warningLightTimer = 0;              
+                }
+                warningLightTimer = 0;
             }
 
         }
@@ -99,6 +107,5 @@ public class CameraOverlayScript : MonoBehaviour
             warningLight.enabled = false;
             warningOutLine.enabled = false;
         }
-       
     }
 }
