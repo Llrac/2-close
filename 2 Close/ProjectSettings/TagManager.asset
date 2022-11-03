@@ -8,6 +8,9 @@ TagManager:
   - BookShelf
   - DangerZone
   - SafeLight
+  - BehindBookshelf
+  - Enemy
+  - PlayerSprite
   layers:
   - Default
   - TransparentFX

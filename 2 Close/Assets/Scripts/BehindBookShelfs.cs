@@ -18,6 +18,13 @@ public class BehindBookShelfs : MonoBehaviour
         }
         
     }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("BehindBookshelf"))
+        {
+            spriteRenderer.enabled = true;
+        }
+    }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("BehindBookshelf"))

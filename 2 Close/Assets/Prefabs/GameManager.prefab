@@ -1098,9 +1098,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1114515480765658417}
   - component: {fileID: 1114515480765658416}
+  - component: {fileID: 994390055}
+  - component: {fileID: 994390054}
   m_Layer: 8
   m_Name: Sprite
-  m_TagString: Untagged
+  m_TagString: PlayerSprite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1172,6 +1174,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &994390055
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114515480765658430}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.3064075, y: -3.215766}
+  serializedVersion: 2
+  m_Radius: 3.3694472
+--- !u!114 &994390054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114515480765658430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc23499762111bc4895f44fc502f856c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2526488269738336938
 GameObject:
   m_ObjectHideFlags: 0
@@ -1208,7 +1238,11 @@ Transform:
   - {fileID: 1820006536}
   - {fileID: 788563443229449016}
   m_Father: {fileID: 0}
+<<<<<<< Updated upstream
   m_RootOrder: 3
+=======
+  m_RootOrder: 1
+>>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2526488269738336939
 MonoBehaviour:
