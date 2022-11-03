@@ -6,9 +6,11 @@ public class DoorLock : MonoBehaviour
 {
     Animator anim;
     GameManager gameControllerScript;
+    public GameObject[] overLays;
     GameObject player;
     GameObject playerToPoint;
     bool isOpen;
+    bool isEntering;
 
     private void Awake()
     {
@@ -38,6 +40,12 @@ public class DoorLock : MonoBehaviour
             playerMoveScript.hasControl = false;
 
             isOpen = true;
+            for (int i = 0; i < overLays.Length; i++)
+            {
+                overLays[i].SetActive(false);
+            }
+
+
         }
     }
 
@@ -51,6 +59,11 @@ public class DoorLock : MonoBehaviour
         if (!AnimatorIsPlaying() && isOpen)
         {
             anim.Play("playerEnters");
+            isEntering = true;
+        }
+        if (!AnimatorIsPlaying() && isEntering)
+        {
+            gameControllerScript.LoadNextLevel();
         }
     }
 }

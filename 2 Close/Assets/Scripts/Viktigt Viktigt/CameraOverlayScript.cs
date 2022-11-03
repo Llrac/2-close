@@ -11,9 +11,10 @@ public class CameraOverlayScript : MonoBehaviour
     public bool isInLightBool;
     public bool isInDangerBool;
     // Start is called before the first frame update
-
+    public float opacityLevel = 0.1f;
     public float warningLightTimer = 0f;
     public float warningRate = 0.3f;
+    float opacityLevelTimer;
 
     void Start()
     {
@@ -83,11 +84,17 @@ public class CameraOverlayScript : MonoBehaviour
     {
         if (isInDangerBool == true)
         {
+            
             //warningLight.enabled = true;
             warningOutLine.enabled = true;
-
+            
             warningLightTimer += Time.deltaTime;
-
+            //Opacity timer
+            opacityLevelTimer = 0.2f * Time.deltaTime;
+            opacityLevel += opacityLevelTimer;
+            warningLight.color = new Color(255f, 0f, 0f, opacityLevel);
+            
+            //Makes the light come on and off
             if (warningLightTimer > warningRate)
             {
                 if (warningLight.enabled == false)
@@ -105,6 +112,9 @@ public class CameraOverlayScript : MonoBehaviour
         //If NOT in danger zones
         if (isInDangerBool == false)
         {
+            opacityLevel = 0f;
+            opacityLevelTimer = 0f;
+
             warningLight.enabled = false;
             warningOutLine.enabled = false;
         }
