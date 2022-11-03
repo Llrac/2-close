@@ -15,8 +15,11 @@ public class PlayerMove : MonoBehaviour
 
     float x, y;
     readonly float diagonalSpeed = 0.7f;
-
-    public float Speed = 10.0f;
+    public float maxSpeed = 3f;
+    public float moveSpeed = 0f;
+    public float acceleration = 0.8f;
+    public float deacceleration = 0.8f;
+    Vector2 moveDirectionVector;
 
     void Start()
     {
@@ -33,6 +36,22 @@ public class PlayerMove : MonoBehaviour
 
         x = Input.GetAxisRaw("Horizontal");
         y = Input.GetAxisRaw("Vertical");
+
+        if (x != 0 || y != 0)
+        {
+            if (moveSpeed < maxSpeed)
+            {
+                moveSpeed += acceleration * Time.deltaTime;
+            }
+        }
+       if ( x == 0 && y == 0)
+        {
+                Debug.Log("movement value of x axis" + x);     
+            if (moveSpeed > 0)
+            {
+                moveSpeed -= deacceleration * Time.deltaTime;
+            }               
+        }
 
         if (y != 0 && x == 0)
         {
@@ -78,12 +97,30 @@ public class PlayerMove : MonoBehaviour
         if (!hasControl)
             return;
 
-        if (x != 0 && y != 0)
-        {           
-            x *= diagonalSpeed;
-            y *= diagonalSpeed;
-        }
+        moveDirectionVector = new Vector2(x, y).normalized;
 
-        rb.velocity = new Vector2(x * Speed, y * Speed);
+        //if (x != 0 && y != 0)
+        //{
+        //    x *= diagonalSpeed;
+        //    y *= diagonalSpeed;
+        //}
+
+        rb.velocity = new Vector2(moveDirectionVector.x * moveSpeed, moveDirectionVector.y * moveSpeed);
+        
+
+
+
     }
+    //void TheInputs()
+    //{
+    //    float moveX = Input.GetAxisRaw("Horizontal");
+    //    float moveY = Input.GetAxisRaw("Vertical");
+
+    //    moveDirectionVector = new Vector2(moveX, moveY);
+    //}
+
+    //void Movement()
+    //{
+    //    rb.velocity = new Vector2(moveDirectionVector.x * moveSpeed, moveDirectionVector.y*moveSpeed);
+    //}
 }
