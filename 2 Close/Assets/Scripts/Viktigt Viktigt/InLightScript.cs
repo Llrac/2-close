@@ -16,7 +16,6 @@ public class InLightScript : MonoBehaviour
     {
         if (collision.CompareTag("SafeLight"))
         {
-            Debug.Log("is in safelight");
             cameraOverlayScript.isInLightBool = true;
             
         }

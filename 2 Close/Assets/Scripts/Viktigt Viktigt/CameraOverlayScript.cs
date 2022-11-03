@@ -64,6 +64,7 @@ public class CameraOverlayScript : MonoBehaviour
             }
             if (timeInDarkness > 21f)
             {
+                if (!darknessGradiant[6].enabled)
                 darknessGradiant[6].enabled = true;
             }
         }
@@ -71,10 +72,10 @@ public class CameraOverlayScript : MonoBehaviour
         {
             for (int i = 0; i < darknessGradiant.Length; i++)
             {
-                darknessGradiant[i].enabled = false;
+                if (darknessGradiant[i] != null)
+                    darknessGradiant[i].enabled = false;
             }
             timeInDarkness = 0f;
-            Debug.Log("is in light");
         }
     }
 
