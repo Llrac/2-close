@@ -30,7 +30,7 @@ public class InLightScript : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("SafeLight"))
+        if (collision.CompareTag("SafeLight")||collision.CompareTag("SafeLightTable"))
         {
             cameraOverlayScript.isInLightBool = false;
         }

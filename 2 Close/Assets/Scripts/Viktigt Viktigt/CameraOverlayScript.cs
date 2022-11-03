@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraOverlayScript : MonoBehaviour
 {
-    float timeInDarkness = 0;
+    public float timeInDarkness = 0;
     public SpriteRenderer[] darknessGradiant;
     public SpriteRenderer warningLight;
     public SpriteRenderer warningOutLine;
