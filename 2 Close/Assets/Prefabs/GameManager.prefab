@@ -334,7 +334,7 @@ Transform:
   - {fileID: 66886503174336929}
   - {fileID: 66886504703429484}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &66886502948732119
 MonoBehaviour:
@@ -655,7 +655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d780d7d213e16a243a72984193ae6cdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RespawnPoint: {fileID: 0}
+  RespawnPoint: {fileID: 717881607913269604}
   isInDanger: 0
 --- !u!1 &66886503174336958
 GameObject:
@@ -2231,7 +2231,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 717881607913269604}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.040985107, y: -0.013900757, z: 0}
+  m_LocalPosition: {x: 0.92, y: 3.63, z: 0}
   m_LocalScale: {x: 0.27651873, y: 0.2866989, z: 0.8019}
   m_ConstrainProportionsScale: 0
   m_Children: []
