@@ -789,8 +789,11 @@ MonoBehaviour:
   warningOutLine: {fileID: 500440046}
   isInLightBool: 0
   isInDangerBool: 0
+<<<<<<< Updated upstream
   warningLightTimer: 0
   warningRate: 0.3
+=======
+>>>>>>> Stashed changes
 --- !u!114 &633975292
 MonoBehaviour:
   m_ObjectHideFlags: 0
