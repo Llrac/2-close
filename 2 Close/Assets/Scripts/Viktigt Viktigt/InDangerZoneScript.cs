@@ -27,7 +27,6 @@ public class InDangerZoneScript : MonoBehaviour
                 this.transform.position = RespawnPoint.transform.position;
                 keyPickupScript.theKey.SetActive(true);
                 gameControllerScript.hasGoldenKey = false;
-                Debug.Log(gameControllerScript.hasGoldenKey + ("bool"));
             }
         }
         else

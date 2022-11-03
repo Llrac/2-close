@@ -31,6 +31,9 @@ public class EnemyMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (currentWaypoint == null)
+            return;
+
         transform.position = Vector3.MoveTowards(transform.position, currentWaypoint.position, moveSpeed * Time.deltaTime);
 
         if (Vector3.Distance(transform.position, currentWaypoint.position) < waypointsDistanceThreshold)

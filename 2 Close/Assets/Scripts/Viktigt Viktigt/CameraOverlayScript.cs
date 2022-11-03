@@ -65,8 +65,7 @@ public class CameraOverlayScript : MonoBehaviour
             }
             if (timeInDarkness > 21f)
             {
-                if (!darknessGradiant[6].enabled)
-                    darknessGradiant[6].enabled = true;
+                darknessGradiant[6].enabled = true;
             }
         }
         if (isInLightBool == true)

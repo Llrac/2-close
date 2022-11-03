@@ -12,12 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/LevelOne.unity
     guid: 779613492f2c76f4cbbd2266094989ef
   - enabled: 1
-    path: Assets/Scenes/ComboScenTest.unity
-    guid: f9b5ae5fa812a0841b89340d659324aa
-  - enabled: 1
-    path: Assets/Scenes/Levels/LevelOne.unity
-    guid: 779613492f2c76f4cbbd2266094989ef
-  - enabled: 1
     path: Assets/Scenes/Levels/TempLevelTwo.unity
     guid: 8274b3473c9d5e94ea170aafbdaaafc8
   m_configObjects: {}

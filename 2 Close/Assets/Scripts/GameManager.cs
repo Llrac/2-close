@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance { get; private set; }
+    Scene scene;
 
-    int sceneIndex = 2;
+    public static GameManager Instance { get; private set; }
 
     private void Awake()
     {
@@ -22,11 +22,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        scene = SceneManager.GetActiveScene();
+    }
+
     public bool hasGoldenKey = false;
 
     public void LoadNextLevel()
     {
-        SceneManager.LoadScene(sceneIndex);
-        sceneIndex++;
+        SceneManager.LoadScene(scene.buildIndex + 1);
     }
 }

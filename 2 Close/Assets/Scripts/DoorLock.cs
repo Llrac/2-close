@@ -26,6 +26,7 @@ public class DoorLock : MonoBehaviour
         }
 
         isOpen = false;
+        isEntering = false;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -44,8 +45,6 @@ public class DoorLock : MonoBehaviour
             {
                 overLays[i].SetActive(false);
             }
-
-
         }
     }
 
