@@ -8,6 +8,7 @@ public class DoorLock : MonoBehaviour
     GameManager gameControllerScript;
     GameObject player;
     GameObject playerToPoint;
+    bool isOpen;
 
     private void Awake()
     {
@@ -21,6 +22,8 @@ public class DoorLock : MonoBehaviour
                 playerToPoint = child.gameObject;
             }
         }
+
+        isOpen = false;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -33,6 +36,21 @@ public class DoorLock : MonoBehaviour
                 Mathf.Lerp(player.transform.position.y, playerToPoint.transform.position.y, 3));
             PlayerMove playerMoveScript = player.GetComponent<PlayerMove>();
             playerMoveScript.hasControl = false;
+
+            isOpen = true;
+        }
+    }
+
+    private void Update()
+    {
+        bool AnimatorIsPlaying()
+        {
+            return anim.GetCurrentAnimatorStateInfo(0).length >
+                   anim.GetCurrentAnimatorStateInfo(0).normalizedTime;
+        }
+        if (!AnimatorIsPlaying() && isOpen)
+        {
+            anim.Play("playerEnters");
         }
     }
 }
