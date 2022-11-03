@@ -6,7 +6,7 @@ public class DoorLock : MonoBehaviour
 {
     Animator anim;
     GameManager gameControllerScript;
-
+    public GameObject[] overLays;
     GameObject player;
     GameObject playerToPoint;
     bool isOpen;
@@ -40,6 +40,12 @@ public class DoorLock : MonoBehaviour
             playerMoveScript.hasControl = false;
 
             isOpen = true;
+            for (int i = 0; i < overLays.Length; i++)
+            {
+                overLays[i].SetActive(false);
+            }
+
+
         }
     }
 

@@ -5,9 +5,10 @@ using UnityEngine;
 public class KeyPickup : MonoBehaviour
 {
     GameManager gameControllerScript;
-
+    public GameObject theKey;
     private void Awake()
     {
+        theKey = this.gameObject;
         gameControllerScript = FindObjectOfType<GameManager>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -15,7 +16,7 @@ public class KeyPickup : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             gameControllerScript.hasGoldenKey = true;
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
         }
     }
 }
