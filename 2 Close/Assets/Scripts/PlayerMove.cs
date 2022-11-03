@@ -32,8 +32,11 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
         if (!hasControl)
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX;
+            rb.constraints = RigidbodyConstraints2D.FreezePositionY;
             return;
-
+        }
         xInput = Input.GetAxis("Horizontal");
         yInput = Input.GetAxis("Vertical");
 
