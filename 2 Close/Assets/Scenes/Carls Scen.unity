@@ -639,6 +639,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7084596387152624158, guid: 72262109fadf157499f7daf68fa29ba4, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7084596387152624158, guid: 72262109fadf157499f7daf68fa29ba4, type: 3}
       propertyPath: detectionCircleTimer
       value: 
       objectReference: {fileID: 928660899}
@@ -1008,19 +1012,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 946670814, guid: ddda05ecab3e6b04f9b148b241bc5d46, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.55125
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 946670814, guid: ddda05ecab3e6b04f9b148b241bc5d46, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 946670814, guid: ddda05ecab3e6b04f9b148b241bc5d46, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.76
+      value: -1.47
       objectReference: {fileID: 0}
     - target: {fileID: 946670814, guid: ddda05ecab3e6b04f9b148b241bc5d46, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.07
+      value: -0.051
       objectReference: {fileID: 0}
     - target: {fileID: 946670816, guid: ddda05ecab3e6b04f9b148b241bc5d46, type: 3}
       propertyPath: m_Sprite
