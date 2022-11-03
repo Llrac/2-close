@@ -458,6 +458,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bookshelf Front
       objectReference: {fileID: 0}
+    - target: {fileID: 289091373482693660, guid: 5725f5abf31766c4e85266cced7ed393, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 289091373482693660, guid: 5725f5abf31766c4e85266cced7ed393, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 289091373482693660, guid: 5725f5abf31766c4e85266cced7ed393, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 289091373482693661, guid: 5725f5abf31766c4e85266cced7ed393, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -658,7 +670,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIManager
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7084596387152624158, guid: 72262109fadf157499f7daf68fa29ba4, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 72262109fadf157499f7daf68fa29ba4, type: 3}
 --- !u!1001 &1861266263
@@ -740,6 +753,14 @@ PrefabInstance:
     - target: {fileID: 710178727, guid: 444cfe477efbaab43ae3cef486c49218, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 710178729, guid: 444cfe477efbaab43ae3cef486c49218, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 710178729, guid: 444cfe477efbaab43ae3cef486c49218, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1114515481077688200, guid: 444cfe477efbaab43ae3cef486c49218, type: 3}
       propertyPath: m_Name
@@ -1077,6 +1098,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 23544ea516bb48c43ae5817272757af7, type: 3}
+    - target: {fileID: 1416527094, guid: ddda05ecab3e6b04f9b148b241bc5d46, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1416527095, guid: ddda05ecab3e6b04f9b148b241bc5d46, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.8
