@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Rigidbody2D))]
@@ -9,6 +10,8 @@ public class PlayerMove : MonoBehaviour
 {
     Animator anim;
     Rigidbody2D rb;
+
+    public static bool gameIsPaused;
 
     public bool hasControl = true;
     bool isWalking = false;
@@ -53,6 +56,11 @@ public class PlayerMove : MonoBehaviour
             {
                 moveSpeed -= deacceleration * Time.deltaTime;
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("Menu");
         }
 
         Animation();
