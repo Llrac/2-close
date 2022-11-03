@@ -5,9 +5,8 @@ using UnityEngine;
 public class EnemyMove : MonoBehaviour
 {
     public float moveSpeed = 3f;
-
-    public float distanceThreshold = 0.5f;
-
+    public float waypointsDistanceThreshold = 0.5f;
+    float distanceBetweenWaypoint = 0;
     Waypoints waypoints;
     Transform currentWaypoint;
 
@@ -17,8 +16,15 @@ public class EnemyMove : MonoBehaviour
         waypoints = FindObjectOfType<Waypoints>();
 
         currentWaypoint = waypoints.GetNextWaypoint(currentWaypoint);
-        transform.position = currentWaypoint.position;
 
+        foreach (Transform child in waypoints.gameObject.transform)
+        {
+            if (Vector3.Distance(transform.position, child.position) < distanceBetweenWaypoint)
+            {
+                distanceBetweenWaypoint = Vector3.Distance(transform.position, child.position);
+                transform.position = child.position;
+            }
+        }
         currentWaypoint = waypoints.GetNextWaypoint(currentWaypoint);
     }
 
@@ -27,7 +33,7 @@ public class EnemyMove : MonoBehaviour
     {
         transform.position = Vector3.MoveTowards(transform.position, currentWaypoint.position, moveSpeed * Time.deltaTime);
 
-        if (Vector3.Distance(transform.position, currentWaypoint.position) < distanceThreshold)
+        if (Vector3.Distance(transform.position, currentWaypoint.position) < waypointsDistanceThreshold)
         {
             currentWaypoint = waypoints.GetNextWaypoint(currentWaypoint);
             if (currentWaypoint.position.x < transform.position.x)

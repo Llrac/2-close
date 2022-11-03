@@ -6,9 +6,11 @@ public class DoorLock : MonoBehaviour
 {
     Animator anim;
     GameManager gameControllerScript;
+
     GameObject player;
     GameObject playerToPoint;
     bool isOpen;
+    bool isEntering;
 
     private void Awake()
     {
@@ -51,6 +53,11 @@ public class DoorLock : MonoBehaviour
         if (!AnimatorIsPlaying() && isOpen)
         {
             anim.Play("playerEnters");
+            isEntering = true;
+        }
+        if (!AnimatorIsPlaying() && isEntering)
+        {
+            gameControllerScript.LoadNextLevel();
         }
     }
 }
