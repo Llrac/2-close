@@ -9,8 +9,8 @@ public class DoorLock : MonoBehaviour
     public GameObject[] overLays;
     GameObject player;
     GameObject playerToPoint;
-    bool isOpen;
-    bool isEntering;
+    public bool isOpen;
+    public bool isEntering;
 
     private void Awake()
     {

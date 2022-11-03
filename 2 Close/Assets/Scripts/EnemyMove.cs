@@ -10,21 +10,17 @@ public class EnemyMove : MonoBehaviour
     Waypoints waypoints;
     Transform currentWaypoint;
 
+    [HideInInspector] public Transform startTransform;
+
+    private void Awake()
+    {
+        startTransform = transform;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         waypoints = FindObjectOfType<Waypoints>();
-
-        currentWaypoint = waypoints.GetNextWaypoint(currentWaypoint);
-
-        foreach (Transform child in waypoints.gameObject.transform)
-        {
-            if (Vector3.Distance(transform.position, child.position) < distanceBetweenWaypoint)
-            {
-                distanceBetweenWaypoint = Vector3.Distance(transform.position, child.position);
-                transform.position = child.position;
-            }
-        }
         currentWaypoint = waypoints.GetNextWaypoint(currentWaypoint);
     }
 

@@ -4,22 +4,32 @@ using UnityEngine;
 
 public class CameraOverlayScript : MonoBehaviour
 {
-    public float timeInDarkness = 0;
-    public SpriteRenderer[] darknessGradiant;
+    public SpriteRenderer[] darknessGradient;
     public SpriteRenderer warningLight;
     public SpriteRenderer warningOutLine;
     public bool isInLightBool;
     public bool isInDangerBool;
-    // Start is called before the first frame update
     public float opacityLevel = 0.1f;
     public float warningLightTimer = 0f;
     public float warningRate = 0.3f;
+    public float timeInDarkness = 0;
+    public float darknessRate = 2;
     float opacityLevelTimer;
 
     void Start()
     {
         isInDangerBool = false;
         isInLightBool = false;
+
+        int childIndex = 0;
+        foreach (Transform child in transform)
+        {
+            if (child.gameObject.name != "WarningLight" && child.gameObject.name != "DarknessOnScreen")
+            {
+                darknessGradient[childIndex] = child.gameObject.GetComponent<SpriteRenderer>();
+                childIndex++;
+            }
+        }
     }
 
     // Update is called once per frame
@@ -39,41 +49,21 @@ public class CameraOverlayScript : MonoBehaviour
         if (isInLightBool == false)
         {
             timeInDarkness += Time.deltaTime;
-            if (timeInDarkness > 3f)
+            
+            for (int i = 0; i < darknessGradient.Length; i++)
             {
-                darknessGradiant[0].enabled = true;
-            }
-            if (timeInDarkness > 6f)
-            {
-                darknessGradiant[1].enabled = true;
-            }
-            if (timeInDarkness > 9f)
-            {
-                darknessGradiant[2].enabled = true;
-            }
-            if (timeInDarkness > 12f)
-            {
-                darknessGradiant[3].enabled = true;
-            }
-            if (timeInDarkness > 15f)
-            {
-                darknessGradiant[4].enabled = true;
-            }
-            if (timeInDarkness > 18f)
-            {
-                darknessGradiant[5].enabled = true;
-            }
-            if (timeInDarkness > 21f)
-            {
-                darknessGradiant[6].enabled = true;
+                if (timeInDarkness > 3 * (i + 1))
+                {
+                    darknessGradient[i].enabled = true;
+                }
             }
         }
         if (isInLightBool == true)
         {
-            for (int i = 0; i < darknessGradiant.Length; i++)
+            for (int i = 0; i < darknessGradient.Length; i++)
             {
-                if (darknessGradiant[i] != null)
-                    darknessGradiant[i].enabled = false;
+                if (darknessGradient[i] != null)
+                    darknessGradient[i].enabled = false;
             }
             timeInDarkness = 0f;
         }

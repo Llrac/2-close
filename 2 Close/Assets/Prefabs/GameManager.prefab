@@ -443,7 +443,7 @@ Transform:
   - {fileID: 66886504703429484}
   - {fileID: 5881926941639603029}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &66886502948732119
 MonoBehaviour:
@@ -1612,14 +1612,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f270f3b54e6b8d469fc12c6845fafdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeInDarkness: 0
-  darknessGradiant:
-  - {fileID: 66886504272801115}
-  - {fileID: 66886503470955846}
-  - {fileID: 66886504314125361}
-  - {fileID: 66886503034463838}
-  - {fileID: 66886503973222536}
-  - {fileID: 66886503717454788}
+  darknessGradient:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   warningLight: {fileID: 66886504106901260}
   warningOutLine: {fileID: 66886504205297305}
   isInLightBool: 0
@@ -1627,6 +1626,7 @@ MonoBehaviour:
   opacityLevel: 0.1
   warningLightTimer: 0
   warningRate: 0.3
+  timeInDarkness: 0
 --- !u!114 &66886503900734406
 MonoBehaviour:
   m_ObjectHideFlags: 0

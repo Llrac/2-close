@@ -5,15 +5,14 @@ using UnityEngine;
 public class InDangerZoneScript : MonoBehaviour
 {
     GameManager gameControllerScript;
-    public GameObject RespawnPoint;
+    public GameObject respawnPoint;
     CameraOverlayScript cameraOverlayScript;
     public bool isInDanger = false;
     float inDangerTimer;
-    KeyPickup keyPickupScript;
+
     private void Start()
     {
         gameControllerScript = FindObjectOfType<GameManager>();
-        keyPickupScript = FindObjectOfType<KeyPickup>();
         cameraOverlayScript = FindObjectOfType<CameraOverlayScript>();
     }
 
@@ -24,9 +23,8 @@ public class InDangerZoneScript : MonoBehaviour
             inDangerTimer += Time.deltaTime;
             if (inDangerTimer > 0.65f)
             {
-                this.transform.position = RespawnPoint.transform.position;
-                keyPickupScript.theKey.SetActive(true);
-                gameControllerScript.hasGoldenKey = false;
+                this.transform.position = respawnPoint.transform.position;
+                gameControllerScript.ResetLevel();
             }
         }
         else
